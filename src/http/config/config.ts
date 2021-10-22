@@ -1,9 +1,15 @@
-import axios from 'axios';
+import axios, { AxiosInstance, AxiosRequestConfig } from 'axios';
 
-const instanceAxios = (baseURL: string, params: any) => {
+interface Config {
+  baseURL: string;
+  // [key: string]: string;
+}
+
+const instanceAxios = ({
+  baseURL,
+}: AxiosRequestConfig<Config>): AxiosInstance => {
   return axios.create({
     baseURL,
-    ...params,
   });
 };
 
