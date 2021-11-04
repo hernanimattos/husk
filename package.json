@@ -9,7 +9,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "npm test",
+      "pre-commit": "eslint",
       "pre-push": "npm test"
     }
   },
@@ -17,7 +17,8 @@
     "build": "babel src --extensions \".js,.ts\" --out-dir dist --copy-files --no-copy-ignored",
     "dev": "ts-node-dev -r tsconfig-paths/register --respawn --transpile-only --ignore-watch node_modules src/index.ts",
     "test": "jest",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "lint": "eslint --fix"
   },
   "devDependencies": {
     "@babel/cli": "^7.15.7",
